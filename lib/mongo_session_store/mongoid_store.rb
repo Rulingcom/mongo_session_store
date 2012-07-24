@@ -1,4 +1,5 @@
 begin
+
 	require 'bson'
   require 'mongoid'
   require 'mongo_session_store/mongo_store_base'
@@ -10,7 +11,6 @@ begin
         class Session
           include Mongoid::Document
           include Mongoid::Timestamps
-          include
 
           store_in collection: MongoSessionStore.collection_name
 
@@ -23,12 +23,12 @@ begin
             field :_id, :type => String
           end
 
-          field :data, :type => BSON::Binary, :default => BSON::Binary.new(Marshal.dump({}))
+          field :data, :type => Moped::BSON::Binary, :default => Moped::BSON::Binary.new(:generic,Marshal.dump({}))
         end
 
         private
         def pack(data)
-          BSON::Binary.new(Marshal.dump(data))
+          Moped::BSON::Binary.new(:generic,Marshal.dump(data))
         end
       end
     end

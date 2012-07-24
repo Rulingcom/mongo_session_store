@@ -1,8 +1,18 @@
 # MongoSessionStore
 
-## Description
+## Origin
 
 MongoSessionStore is a collection of Rails-compatible session stores for MongoMapper and Mongoid, but also included is a generic Mongo store that works with any (or no!) Mongo ODM.
+
+## Description
+
+This fork aims to address a couple of issues I was having with the master branch:
+
+    <class:Session>': undefined method `collection_name=' for ActionDispatch::Session::MongoidStore::Session:Class (NoMethodError)
+    
+and
+
+    <class:Session>': uninitialized constant ActionDispatch::Session::MongoidStore::Session::BSON (NameError)
 
 ## Usage
 

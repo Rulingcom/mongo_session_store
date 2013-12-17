@@ -23,12 +23,12 @@ begin
             field :_id, :type => String
           end
 
-          field :data, :type => Moped::BSON::Binary, :default => Moped::BSON::Binary.new(:generic,Marshal.dump({}))
+          field :data, :type => BSON::Binary, :default => BSON::Binary.new(:generic,Marshal.dump({}))
         end
 
         private
         def pack(data)
-          Moped::BSON::Binary.new(:generic,Marshal.dump(data))
+          BSON::Binary.new(:generic,Marshal.dump(data))
         end
       end
     end

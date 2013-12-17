@@ -1,7 +1,6 @@
 begin
 
-	require 'bson'
-  require 'mongoid'
+	require 'mongoid'
   require 'mongo_session_store/mongo_store_base'
 
   module ActionDispatch

@@ -3,6 +3,8 @@ source :rubygems
 MONGO_VERS = '1.5.2' unless defined? MONGO_VERS
 
 RAILS_VERS = case ENV['RAILS_VERS']
+             when '2.8.1'
+               '~> 2.8.1'
              when '3.0'
                '~>3.0.0'
              when '3.1'
